@@ -61,8 +61,12 @@
 %  \pgftext[at=\pgfpoint{0.5cm}{3.2cm},left,base]{\rotatebox{90}{\pgfuseimage{ilm-logo}}}
 %\end{pgfpicture}
 %\else%
-  \pgfuseimage{bgd}
+  %\pgfuseimage{bgd}\\
 %\fi%
+\begin{pgfpicture}{0cm}{0cm}{\paperwidth}{\paperheight}
+\pgftext[at=\pgfpoint{0cm}{\paperheight},left,top]{\includegraphics[width=\paperwidth, clip=true, trim=0 32cm 0 0]{img/ilm-background}}
+\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\includegraphics[width=\paperwidth, clip=true, trim=0 0 0 32cm]{img/ilm-background}}
+\end{pgfpicture}
 }
 \setbeamertemplate{navigation symbols}{}
 
