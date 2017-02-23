@@ -1,0 +1,26 @@
+\begin{tikzpicture}[trim left, trim right=\paperwidth]
+\definecolor{ilmcolor}{RGB}{177,37,159}
+\definecolor{ilmgray}{RGB}{205,205,205}
+%\clip (0,0) rectangle (\paperwidth,-0.3\paperwidth);
+%\node[anchor=south west, inner sep=0] (original) {\includegraphics[width=\paperwidth, clip=true, trim=0 0 0 32cm]{img/ilm-background}};
+
+\let\rad\relax
+\newlength\rad
+\setlength{\rad}{0.0025\paperwidth};
+\let\jump\relax
+\newlength\jump
+\setlength{\jump}{0.0158125\paperwidth};
+
+\path[use as bounding box] (0,0) rectangle (\paperwidth, 7\jump);
+
+\foreach \y [evaluate=\y as \r using 1-0.1*\y] in {0,1,...,6}{
+	\foreach \x in {0,1,...,63}
+		\fill[ilmgray] (1.6\rad+\x\jump,\rad+\y\jump) circle (\r\rad);
+};
+\foreach \y [evaluate=\y as \r using 1-0.1*\y] in {0.5,1.5,...,5.5}{
+	\foreach \x in {0,1,...,63}
+		\fill[ilmgray] (1.6\rad+\x\jump+0.5\jump,\rad+\y\jump) circle (\r\rad);
+};
+
+
+\end{tikzpicture}
