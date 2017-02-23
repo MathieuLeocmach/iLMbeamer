@@ -25,6 +25,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{ilmcolor}{RGB}{177,37,159}
 \definecolor{ilmorange}{RGB}{255,116,40}
+\definecolor{ilmgray}{RGB}{205,205,205}
 
 \usecolortheme[named=ilmcolor]{structure}
 \setbeamercolor{titlelike}{fg=ilmcolor!65!black}
@@ -40,6 +41,7 @@
 \setbeamercolor{palette secondary}{bg=ilmcolor!10!white}
 \setbeamercolor{palette tertiary}{bg=ilmcolor,fg=white}
 %\setbeamercovered{dynamic}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,13 +66,13 @@
   %\pgfuseimage{bgd}\\
 %\fi%
 \begin{pgfpicture}{0cm}{0cm}{\paperwidth}{\paperheight}
-\pgftext[at=\pgfpoint{0cm}{\paperheight},left,top]{\includegraphics[width=\paperwidth, clip=true, trim=0 32cm 0 0]{img/ilm-background}}
+\pgftext[at=\pgfpoint{0cm}{\paperheight},left,top]{\includegraphics[width=\paperwidth]{img/top.pdf}}
 \pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\includegraphics[width=\paperwidth, clip=true, trim=0 0 0 32cm]{img/ilm-background}}
 \end{pgfpicture}
 }
 \setbeamertemplate{navigation symbols}{}
 
-\setbeamertemplate{frametitle}{\vskip{0.0078125\paperwidth}\hfill\insertframetitle}
+\setbeamertemplate{frametitle}{\hfill\rule[-.3\baselineskip]{0pt}{0.0078125\paperwidth}\insertframetitle}
 \setbeamerfont{frametitle}{series=\mdseries}
 
 
