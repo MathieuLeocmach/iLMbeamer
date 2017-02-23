@@ -1,0 +1,64 @@
+\begin{tikzpicture}
+\definecolor{ilmcolor}{RGB}{177,37,159}
+\definecolor{ilmgray}{RGB}{205,205,205}
+\clip (0,0) rectangle (\textwidth,-0.3\textwidth);
+%\node[anchor=north west, inner sep=0] (original) {\includegraphics[width=\textwidth]{/home/mathieu/Documents/Recherches/tex/iLMbeamer/img/ilm-background.png}};
+
+
+\let\jump\relax
+\newlength\jump
+\setlength{\jump}{0.03575\textwidth};
+
+%shadow
+\begin{scope}[yshift=-0.09675\textwidth]
+
+%\shade[upper right=black!33]  (0,-0.0025\textwidth) ..controls +(-90:0.275\jump) and +(180:0.275\jump).. +(0.7\jump,-0.56\jump) coordinate (bl) |- (0,-0.0025\textwidth) -- cycle;
+
+\begin{scope}
+\clip (0.7\jump,0) -- ++(0,-0.7\jump) coordinate (bl) arc[start angle=-90, end angle=-180, radius=0.7\jump];
+\shade[inner color=black!35] (0.7\jump,0) circle (0.7\jump);
+\end{scope}
+\shade[top color=black!33] (bl) rectangle (0.285\textwidth,-0.002\textwidth) coordinate (ri);
+
+\let\rad\relax
+\newlength\rad
+\setlength{\rad}{1.7\jump};
+
+\begin{scope}
+\coordinate (c1) at ($(ri|-bl)+(0,\rad)$);
+\clip (c1) -- +(-45:\rad) arc[start angle=-45, end angle=-90,radius=\rad];
+\shade[inner color=black!90]  (c1) circle (\rad);
+\end{scope}
+\begin{scope}
+\coordinate (c2) at (0.321\textwidth+0.7\jump,2\jump-\rad);
+\clip (c2) -- +(135:\rad) arc[start angle=135, end angle=90,radius=\rad];
+\shade[outer color=black!90, inner color=white]  (c2) circle (\rad);
+\end{scope}
+\begin{scope}[transform canvas={shift=(c1), shift=(135:2.7\jump), rotate=45}]
+\shade[top color=black!90] (0,0) rectangle +(0.71\jump,-\rad);
+\end{scope}
+
+\shade[top color=black!33] (c2) rectangle (\textwidth-0.5\jump,\jump-0.002\textwidth);
+\begin{scope}
+\coordinate (c3) at (\textwidth-0.5\jump,0.3\jump+\rad);
+\clip (c3) -- +(-45:\rad) arc[start angle=-45, end angle=-90,radius=\rad];
+\shade[inner color=black!90]  (c3) circle (\rad);
+\end{scope}
+\end{scope}
+
+%background
+\begin{scope}
+\clip (\textwidth,0) -- (0,0)[yshift=-0.09675\textwidth] -- (0,0) -- (0.285\textwidth,0) .. controls +(0:0.275\jump) and +(-90:0.275\jump)..  (0.306\textwidth,0.5\jump) .. controls +(90:0.275\jump) and +(-180:0.275\jump).. (0.321\textwidth,\jump) -- (\textwidth-0.5\jump, \jump) .. controls +(0:0.275\jump) and +(-90:0.275\jump).. (\textwidth+0.002125\textwidth, 1.5\jump);
+\shade[top color=ilmgray] (0,0) rectangle (\textwidth, -0.09675\textwidth) -- cycle;
+\end{scope}
+
+%logo
+\node[anchor=north west, inner sep=0] (logo) at (0.048\textwidth, -0.006\textwidth){\includegraphics[width=0.174\textwidth]{/home/mathieu/Documents/Recherches/tex/iLMbeamer/img/Logo_ILM_presentation.pdf}};
+
+%purple line
+\begin{scope}[yshift=-0.09675\textwidth]
+\draw[ilmcolor!88!black, line width=0.00425\textwidth] (0,0) -- (0.285\textwidth,0) .. controls +(0:0.275\jump) and +(-90:0.275\jump)..  (0.306\textwidth,0.5\jump) .. controls +(90:0.275\jump) and +(-180:0.275\jump).. (0.321\textwidth,\jump) -- (\textwidth-0.5\jump, \jump) .. controls +(0:0.275\jump) and +(-90:0.275\jump).. (\textwidth+0.002125\textwidth, 1.5\jump);
+\end{scope}
+
+
+\end{tikzpicture}
