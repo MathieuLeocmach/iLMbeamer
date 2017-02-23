@@ -40,7 +40,7 @@
 \end{scope}
 
 %logo
-\node[anchor=north west, inner sep=0] (logo) at (0.048\paperwidth, -0.006\paperwidth){\includegraphics[width=0.174\paperwidth]{/data/Documents/tex/svn/iLMbeamer/img/Logo_ILM_presentation.pdf}};
+\node[anchor=north west, inner sep=0] (logo) at (0.048\paperwidth, -0.006\paperwidth){\includegraphics[width=0.174\paperwidth]{img/Logo_ILM_presentation.pdf}};
 
 %purple line
 \begin{scope}[yshift=-0.09675\paperwidth]
